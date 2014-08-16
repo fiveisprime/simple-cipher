@@ -1,6 +1,6 @@
 {
   "name": "simple-cipher",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple cipher/decipher utility.",
   "main": "index.js",
   "scripts": {
