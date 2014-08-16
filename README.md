@@ -6,7 +6,7 @@ A simple cipher/decipher utility.
 # Usage
 
 Simple-Cipher includes two methods for creating and deciphering text. Each of
-the methods requires both the text to encrypt/decrypt as well as the password
+the methods accepts some text to encrypt/decrypt as well as an optional password
 for encrypting/decrypting the text.
 
 ```js
