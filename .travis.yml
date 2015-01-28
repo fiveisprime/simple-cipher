@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - '0.8'
+  - '0.10'
+before_install:
+  - 'npm install npm@1.4.28 -g && npm install codeclimate-test-reporter -g'
+addons:
+  code_climate:
+    repo_token: 41dbed4a9b2f8ecf126852030ec145335f79cd1d7b932547e2a0451baa89ecf2
+after_script:
+  - cat coverage/lcov.info | codeclimate
