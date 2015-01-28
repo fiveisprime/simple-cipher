@@ -1,6 +1,11 @@
 simple-cipher
 =============
 
+[![NPM version](https://badge.fury.io/js/simple-cipher.svg)](http://badge.fury.io/js/simple-cipher)
+[![Build Status](https://travis-ci.org/fiveisprime/simple-cipher.svg?branch=master)](https://travis-ci.org/fiveisprime/simple-cipher)
+[![Code Climate](https://codeclimate.com/github/fiveisprime/simple-cipher/badges/gpa.svg)](https://codeclimate.com/github/fiveisprime/simple-cipher)
+[![Test Coverage](https://codeclimate.com/github/fiveisprime/simple-cipher/badges/coverage.svg)](https://codeclimate.com/github/fiveisprime/simple-cipher)
+
 A simple cipher/decipher utility.
 
 # Usage
@@ -14,18 +19,18 @@ var cipher = require('simple-cipher');
 
 // Outputs:
 //    cc1fbd73cb93106c3358636ff619bdbd
-console.log(cipher.encrypt('test', 'test'));
+console.log(cipher.encrypt('test', 'password'));
 
 // Outputs:
 //    test
-console.log(cipher.decrypt('cc1fbd73cb93106c3358636ff619bdbd', 'test'));
+console.log(cipher.decrypt('cc1fbd73cb93106c3358636ff619bdbd', 'password'));
 ```
 
 # License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Matt Hernandez
+Copyright (c) 2015 Matt Hernandez
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,19 +1,25 @@
 var crypto = require('crypto');
 
+function run(type, text, password) {
+  var cipher   = crypto.createCipher('aes-256-cbc', password || '62e591d3');
+  var decipher = crypto.createDecipher('aes-256-cbc', password || '62e591d3');
+
+  if ('encrypt' === type) {
+    return cipher.update(text, 'utf8', 'hex') + cipher.final('hex');
+  }
+
+  if ('decrypt' === type) {
+    return decipher.update(text, 'hex', 'utf8') + decipher.final('utf8');
+  }
+}
+
 //
 // Encrypt the specified text using the AES-256 algorithm with the specified
 //    password.
 // If no password is provided, a default password will be used for both
 //    operations.
 //
-exports.encrypt = function (text, password) {
-  var cipher  = crypto.createCipher('aes-256-cbc', password || '62e591d3')
-    , crypted = cipher.update(text, 'utf8', 'hex');
-
-  crypted += cipher.final('hex');
-
-  return crypted;
-};
+exports.encrypt = run.bind(this, 'encrypt');
 
 //
 // Decrypt the specified text using the AES-256 algorithm with the specified
@@ -21,11 +27,4 @@ exports.encrypt = function (text, password) {
 // If no password is provided, a default password will be used for both
 //    operations.
 //
-exports.decrypt = function (text, password) {
-  var decipher = crypto.createDecipher('aes-256-cbc', password || '62e591d3')
-    , dec      = decipher.update(text, 'hex', 'utf8');
-
-  dec += decipher.final('utf8');
-
-  return dec;
-};
+exports.decrypt = run.bind(this, 'decrypt');
