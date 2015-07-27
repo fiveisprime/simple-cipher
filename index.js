@@ -6,14 +6,14 @@ var crypto = require('crypto');
 // If no password is provided, a default password will be used.
 //
 function run(type, text, password) {
-  var cipher   = crypto.createCipher('aes-256-cbc', password || '62e591d3');
+  var cipher = crypto.createCipher('aes-256-cbc', password || '62e591d3');
   var decipher = crypto.createDecipher('aes-256-cbc', password || '62e591d3');
 
-  if ('encrypt' === type) {
+  if (type === 'encrypt') {
     return cipher.update(text, 'utf8', 'hex') + cipher.final('hex');
   }
 
-  if ('decrypt' === type) {
+  if (type === 'decrypt') {
     return decipher.update(text, 'hex', 'utf8') + decipher.final('utf8');
   }
 }
