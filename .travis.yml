@@ -7,4 +7,4 @@ addons:
   code_climate:
     repo_token: 41dbed4a9b2f8ecf126852030ec145335f79cd1d7b932547e2a0451baa89ecf2
 after_script:
-  - 'npm run gen-coverage && cat lcov.info | codeclimate-test-reporter'
+  - 'npm run gen-coverage && cat coverage/lcov.info | codeclimate-test-reporter'

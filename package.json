@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lab --coverage --lint",
-    "gen-coverage": "lab --coverage --reporter lcov > lcov.info"
+    "gen-coverage": "lab --coverage --reporter lcov -o coverage/lcov.info"
   },
   "repository": {
     "type": "git",
